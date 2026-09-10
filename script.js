@@ -1,4 +1,3 @@
-document.documentElement.classList.add('js');
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
 const header=$('.header');
 const onScroll=()=>header&&header.classList.toggle('scrolled',scrollY>24); onScroll(); addEventListener('scroll',onScroll,{passive:true});
