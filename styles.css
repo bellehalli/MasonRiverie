@@ -83,3 +83,10 @@
         visibility:hidden;
     }
 }
+@media(max-width:640px){
+
+.brand img{
+width:160px;
+}
+
+}
