@@ -1,9 +1,0 @@
-Maison Rivière Luxury Header Patch
-
-Changes:
-- Replaced text-only header/footer branding with logo-lockup.PNG where applicable.
-- Preserved hero video, image paths, layouts, and existing assets.
-- No asset folders renamed.
-- No redesign performed.
-
-Upload these files into the GitHub repository root and replace matching files.
