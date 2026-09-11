@@ -205,22 +205,31 @@ if (builder) {
   calc();
 
 
-  $$('.mood').forEach(mood => {
+$$('.mood').forEach(mood => {
 
-    mood.addEventListener('click', () => {
+  mood.setAttribute(
+    'aria-pressed',
+    mood.classList.contains('active') ? 'true' : 'false'
+  );
 
-      $$('.mood').forEach(item =>
-        item.classList.remove('active')
-      );
+  mood.addEventListener('click', () => {
 
-      mood.classList.add('active');
+    $$('.mood').forEach(item => {
 
-      $('#moodName').textContent =
-        mood.dataset.mood;
+      item.classList.remove('active');
+      item.setAttribute('aria-pressed', 'false');
 
     });
 
+    mood.classList.add('active');
+    mood.setAttribute('aria-pressed', 'true');
+
+    $('#moodName').textContent =
+      mood.dataset.mood;
+
   });
+
+});
 
 }
 
