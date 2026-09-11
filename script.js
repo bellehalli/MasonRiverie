@@ -80,13 +80,22 @@ $$('.reveal').forEach(el => obs.observe(el));
 // Gallery filters
 $$('.filter').forEach(btn => {
 
+  btn.setAttribute(
+    'aria-pressed',
+    btn.classList.contains('active') ? 'true' : 'false'
+  );
+
   btn.addEventListener('click', () => {
 
-    $$('.filter').forEach(button =>
-      button.classList.remove('active')
-    );
+    $$('.filter').forEach(button => {
+
+      button.classList.remove('active');
+      button.setAttribute('aria-pressed', 'false');
+
+    });
 
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
 
     const filter = btn.dataset.filter;
 
@@ -102,9 +111,6 @@ $$('.filter').forEach(btn => {
   });
 
 });
-
-
-// Wedding Builder
 const builder = document.querySelector('[data-builder]');
 
 if (builder) {
